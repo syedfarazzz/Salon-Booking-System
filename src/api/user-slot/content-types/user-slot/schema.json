@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_slots",
+  "info": {
+    "singularName": "user-slot",
+    "pluralName": "user-slots",
+    "displayName": "user_slot",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "my_slot": {
+      "type": "datetime"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "booked",
+        "completed"
+      ]
+    },
+    "isDiscounted": {
+      "type": "boolean"
+    },
+    "discountCode": {
+      "type": "string"
+    },
+    "slots": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::slot.slot",
+      "mappedBy": "user_slot"
+    },
+    "slot_history": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::slot-history.slot-history",
+      "mappedBy": "user_slot"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "user_slots"
+    },
+    "user_email": {
+      "type": "email"
+    },
+    "promoCode": {
+      "type": "string"
+    }
+  }
+}

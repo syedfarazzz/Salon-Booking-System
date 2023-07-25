@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "slots",
+  "info": {
+    "singularName": "slot",
+    "pluralName": "slots",
+    "displayName": "slot",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user_slot": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::user-slot.user-slot",
+      "inversedBy": "slots"
+    },
+    "startTime": {
+      "type": "time"
+    },
+    "endTime": {
+      "type": "time"
+    },
+    "date": {
+      "type": "date"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rate_and_reviews",
+  "info": {
+    "singularName": "rate-and-review",
+    "pluralName": "rate-and-reviews",
+    "displayName": "rate_and_review",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "userName": {
+      "type": "string"
+    },
+    "rating": {
+      "max": 5,
+      "min": 0,
+      "default": 0,
+      "required": true,
+      "type": "integer"
+    },
+    "review": {
+      "type": "text",
+      "required": true
+    },
+    "userImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "isAdminApproved": {
+      "type": "boolean"
+    },
+    "services": {
+      "type": "json"
+    }
+  }
+}
