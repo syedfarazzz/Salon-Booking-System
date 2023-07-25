@@ -24,6 +24,7 @@ module.exports = {
 
 
 
+                // console.log(updatedUserSlot);
 
             //Update the UserSlot record in the database with the promoCode
         //     const updatedUserSlot = await strapi.db.query('api::user-slot.user-slot').update({
