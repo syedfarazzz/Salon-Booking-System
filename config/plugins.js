@@ -15,8 +15,8 @@ module.exports = ({ env }) => ({
         // ... any custom nodemailer options
       },
       settings: {
-        defaultFrom: 'info@everlybeauty.ca',
-        defaultReplyTo: 'info@everlybeauty.ca',
+        defaultFrom: 'syedfarazahmed.8@gmail.com',
+        defaultReplyTo: 'syedfarazahmed.8@gmail.com',
       },
     },
   },

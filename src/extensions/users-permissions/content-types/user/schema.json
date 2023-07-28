@@ -79,6 +79,20 @@
       "relation": "oneToMany",
       "target": "api::user-slot.user-slot",
       "mappedBy": "user"
+    },
+    "isStudent": {
+      "type": "boolean",
+      "default": false
+    },
+    "studentCard": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "studentCodeUsed": {
+      "type": "integer"
     }
   }
 }

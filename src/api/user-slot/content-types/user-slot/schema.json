@@ -12,24 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "my_slot": {
-      "type": "datetime"
-    },
-    "user_id": {
-      "type": "string"
-    },
     "status": {
       "type": "enumeration",
       "enum": [
         "booked",
         "completed"
-      ]
-    },
-    "isDiscounted": {
-      "type": "boolean"
-    },
-    "discountCode": {
-      "type": "string"
+      ],
+      "default": "booked"
     },
     "slots": {
       "type": "relation",
@@ -49,11 +38,23 @@
       "target": "plugin::users-permissions.user",
       "inversedBy": "user_slots"
     },
+    "payableAmount": {
+      "type": "integer"
+    },
+    "services": {
+      "type": "json"
+    },
+    "startTime": {
+      "type": "time"
+    },
+    "endTime": {
+      "type": "time"
+    },
+    "date": {
+      "type": "date"
+    },
     "user_email": {
       "type": "email"
-    },
-    "promoCode": {
-      "type": "string"
     }
   }
 }

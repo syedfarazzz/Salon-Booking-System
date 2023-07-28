@@ -23,6 +23,8 @@ module.exports = {
                 });
 
 
+                strapi.log.debug("your string or object")
+
 
                 // console.log(updatedUserSlot);
 
