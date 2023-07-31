@@ -8,7 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -44,10 +44,10 @@
     "services": {
       "type": "json"
     },
-    "startTime": {
+    "start": {
       "type": "time"
     },
-    "endTime": {
+    "end": {
       "type": "time"
     },
     "date": {
