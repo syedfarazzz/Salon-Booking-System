@@ -16,7 +16,9 @@
       "type": "enumeration",
       "enum": [
         "booked",
-        "completed"
+        "completed",
+        "pending",
+        "Didn't show up"
       ],
       "default": "booked"
     },
