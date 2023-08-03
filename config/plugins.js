@@ -1,32 +1,40 @@
 
 module.exports = ({ env }) => ({
     
-  email: {
-    config: {
+  email: 
+  {
+    config: 
+    {
       provider: 'nodemailer',
-      providerOptions: {
+      providerOptions: 
+      {
         host: env('SMTP_HOST'),
         port: env('SMTP_PORT'),
-        auth: {
+        auth: 
+        {
           type: 'login',
           user: env('SMTP_USERNAME'),
           pass: env('SMTP_PASSWORD'),
         },
         // ... any custom nodemailer options
       },
-      settings: {
-        defaultFrom: 'syedfarazahmed.8@gmail.com',
-        defaultReplyTo: 'syedfarazahmed.8@gmail.com',
+      settings: 
+      {
+        defaultFrom: 'coder_dev_test@outlook.com',
+        defaultReplyTo: 'coder_dev_test@outlook.com',
       },
     },
   },
 
   // module.exports = {
     // ...
-    upload: {
-      config: {
+    upload: 
+    {
+      config: 
+      {
         sizeLimit: 250 * 1024 * 1024, // 256mb in bytes
-        breakpoints: {
+        breakpoints: 
+        {
           xlarge: 1920,
           large: 1000,
           medium: 750,

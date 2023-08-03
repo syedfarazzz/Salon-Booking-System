@@ -17,16 +17,9 @@
       "enum": [
         "booked",
         "completed",
-        "pending",
         "Didn't show up"
       ],
       "default": "booked"
-    },
-    "slots": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::slot.slot",
-      "mappedBy": "user_slot"
     },
     "slot_history": {
       "type": "relation",
@@ -54,9 +47,6 @@
     },
     "date": {
       "type": "date"
-    },
-    "user_email": {
-      "type": "email"
     }
   }
 }
