@@ -24,11 +24,15 @@
       "relation": "oneToOne",
       "target": "api::user-slot.user-slot"
     },
-    "users": {
+    "discountUser": {
       "type": "relation",
-      "relation": "manyToMany",
+      "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
-      "mappedBy": "discounts"
+      "inversedBy": "discounts"
+    },
+    "isReferred": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

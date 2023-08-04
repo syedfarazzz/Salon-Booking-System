@@ -21,12 +21,6 @@
       ],
       "default": "booked"
     },
-    "slot_history": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::slot-history.slot-history",
-      "mappedBy": "user_slot"
-    },
     "user": {
       "type": "relation",
       "relation": "manyToOne",

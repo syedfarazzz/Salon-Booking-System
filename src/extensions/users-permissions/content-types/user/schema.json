@@ -68,12 +68,6 @@
     "payment_verified": {
       "type": "boolean"
     },
-    "discounts": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::discount.discount",
-      "inversedBy": "users"
-    },
     "user_slots": {
       "type": "relation",
       "relation": "oneToMany",
@@ -102,6 +96,12 @@
     "lastName": {
       "type": "string",
       "required": true
+    },
+    "discounts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::discount.discount",
+      "mappedBy": "discountUser"
     }
   }
 }

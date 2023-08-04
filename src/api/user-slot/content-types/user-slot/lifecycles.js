@@ -1,8 +1,6 @@
-//Custom logic for generating PromoCode and sending email
 const { errors } = require('@strapi/utils');
 const { ApplicationError } = errors;
 const crypto = require('crypto');
-// const { DuplicateEntry } = require("@strapi/utils").errors;
 
 module.exports = 
 {
@@ -12,7 +10,6 @@ module.exports =
         
         const newEntryDate = params.data.date;
         const newEntryStartTime = params.data.start;
-        const newEntryEndTime = params.data.end;
         
         try 
         {
@@ -39,7 +36,7 @@ module.exports =
             if (entries.length > 0 )
             {
                 // throw new Error('A slot with the same date and time already exists.');
-                // throw new DuplicateEntry(errorMessage);
+                
                 throw new ApplicationError('A slot with the same date and time already exists.');
                 // Respond with an error message and an appropriate status code (e.g., 400 Bad Request)
     
@@ -56,59 +53,65 @@ module.exports =
     
     async afterUpdate(event) 
     {
-        const { result, params, populate } = event;
+        const { result, params } = event;
 
-        console.log(result.id);
-        console.log(result);
-        console.log("--------");
-        console.log(populate);
+        // console.log(result);
+        // console.log("--------");
 
         // const user = await strapi.entityService.findOne('api::user-slot.user-slot', {
         //     where: { id: result.id },
         //     populate: '*',
         // });
-        const entity = await strapi.db.query('api::user-slot.user-slot').findOne(
-            {
-                where: { id: result.id }, populate: true
-            }
-        );
 
-        console.log(entity);
-        const email = entity.user.email;
-        console.log(email);
-
-        if (result.status === "completed")
+        try
         {
-            const cryptoCode = crypto.randomBytes(3).toString('hex');
-            const userInitials = email.substring(0, 5);
-            const promoCode = userInitials + cryptoCode;
-                
-            try
+            const entity = await strapi.db.query('api::user-slot.user-slot').findOne(
+                {
+                    where: { id: result.id }, populate: true
+                }
+            );
+    
+            const email = entity.user.email;
+
+            //Custom logic for generating PromoCode and sending email
+            if (result.status === "completed")
             {
-                await strapi.plugins['email'].services.email.send
-                ({
-                    to: email,
-                    from: 'coder_dev_test@outlook.com',
-                    subject: 'Promo Code',
-                    text: `Your Promo Code is: ${promoCode}`
-                });    
-
-
-                const createdPromo = await strapi.db.query('api::discount.discount').create({
-                    data: 
-                    {
-                        promoCode: promoCode,
-                        
-                    } // Data to be Created
-                });
-
+                const cryptoCode = crypto.randomBytes(3).toString('hex');
+                const userInitials = email.substring(0, 5);
+                const promoCode = userInitials + cryptoCode;
+                    
+                try
+                {
+                    await strapi.plugins['email'].services.email.send
+                    ({
+                        to: email,
+                        from: 'coder_dev_test@outlook.com',
+                        subject: 'Promo Code',
+                        text: `Your Promo Code is: ${promoCode}`
+                    });    
+    
+    
+                    const createdPromo = await strapi.db.query('api::discount.discount').create({
+                        data: 
+                        {
+                            promoCode: promoCode,
+                            
+                            discountUser: entity.user.id
+                        } // Data to be Created
+                    });
+    
+                }
+    
+                catch(err)
+                {
+                    console.log(err);
+                }
+    
             }
-
-            catch(err)
-            {
-                console.log(err);
-            }
-
+        }
+        catch(errr)
+        {
+            console.log(errr);
         }
     }
 }

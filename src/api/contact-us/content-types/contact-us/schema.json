@@ -19,7 +19,7 @@
       "type": "string"
     },
     "phoneNumber": {
-      "type": "integer"
+      "type": "biginteger"
     },
     "message": {
       "type": "text"
