@@ -41,6 +41,13 @@
     },
     "date": {
       "type": "date"
+    },
+    "isReviewed": {
+      "type": "boolean",
+      "default": false
+    },
+    "details": {
+      "type": "json"
     }
   }
 }

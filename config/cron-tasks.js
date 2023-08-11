@@ -4,13 +4,10 @@ module.exports = {
         task: async ({ strapi }) => 
         {
             try
-            {
-                console.log("Running userslot check");
-                
+            {      
                 const currentDate = new Date();
                 const dateOnly = currentDate.toISOString().split('T')[0];
                 // console.log(dateOnly);
-                
 
                 /* Add your own logic here */
                 const slotsToBeUpdated = await strapi.db.query('api::user-slot.user-slot').findMany(
@@ -56,7 +53,6 @@ module.exports = {
         // The cron schedule: Run at 9:00 PM every day in the Canada/Eastern timezone.
         rule: "0 0 21 * * *",
         tz: "Canada/Eastern",
-        // tz: "Asia/Karachi"
       },
     },
   };

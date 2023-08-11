@@ -4,8 +4,10 @@ const crypto = require('crypto');
 
 module.exports = 
 {
+    /*
     async beforeCreate(event) 
     {
+        console.log("before Create fn");
         const { result, params } = event;
         
         const newEntryDate = params.data.date;
@@ -50,6 +52,7 @@ module.exports =
         }
         
     },
+    */
     
     async afterUpdate(event) 
     {
