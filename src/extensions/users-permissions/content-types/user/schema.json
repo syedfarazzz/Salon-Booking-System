@@ -102,6 +102,10 @@
       "relation": "oneToMany",
       "target": "api::discount.discount",
       "mappedBy": "discountUser"
+    },
+    "isReferred": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

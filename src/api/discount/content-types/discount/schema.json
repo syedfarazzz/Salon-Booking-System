@@ -15,24 +15,11 @@
     "promoCode": {
       "type": "string"
     },
-    "isUsed": {
-      "type": "boolean",
-      "default": false
-    },
-    "user_slot": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::user-slot.user-slot"
-    },
     "discountUser": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "discounts"
-    },
-    "isReferred": {
-      "type": "boolean",
-      "default": false
     }
   }
 }
