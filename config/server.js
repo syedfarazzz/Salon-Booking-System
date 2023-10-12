@@ -8,6 +8,8 @@ module.exports = ({ env }) => ({
     tasks: cronTasks,
   },
   // url: " https://0fa0-113-203-241-37.ngrok-free.app",
+  url: "https://api.everlybeauty.ca",
+
   app: {
     keys: env.array("APP_KEYS"),
   },
