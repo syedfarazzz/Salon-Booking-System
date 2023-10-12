@@ -1,0 +1,83 @@
+{
+  "kind": "collectionType",
+  "collectionName": "client_assessment_forms",
+  "info": {
+    "singularName": "client-assessment-form",
+    "pluralName": "client-assessment-forms",
+    "displayName": "Client_assessment_form",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "allergies": {
+      "type": "json",
+      "required": false
+    },
+    "dermatologicalConditions": {
+      "type": "json"
+    },
+    "infections": {
+      "type": "json"
+    },
+    "respiratoryConditions": {
+      "type": "json"
+    },
+    "cardiovascularConditions": {
+      "type": "json"
+    },
+    "mestrualAndReproductiveConditions": {
+      "type": "json"
+    },
+    "autoimmuneAndInflammatoryConditions": {
+      "type": "json"
+    },
+    "neurologicalAndSeizureDisorders": {
+      "type": "json"
+    },
+    "bloodAndCirculatoryDisorders": {
+      "type": "json"
+    },
+    "endocrineDisorders": {
+      "type": "json"
+    },
+    "cancerAndPrecancerousConditions": {
+      "type": "text"
+    },
+    "mentalHealthConditions": {
+      "type": "json"
+    },
+    "implantedDevices": {
+      "type": "json"
+    },
+    "organDysfunction": {
+      "type": "text"
+    },
+    "immuneSystemDisorders": {
+      "type": "json"
+    },
+    "furtherDetails": {
+      "type": "json"
+    },
+    "medicationHistory": {
+      "type": "json"
+    },
+    "skinHistory": {
+      "type": "json"
+    },
+    "name": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "client": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "client_assessment_form"
+    }
+  }
+}

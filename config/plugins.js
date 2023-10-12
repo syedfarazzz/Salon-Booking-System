@@ -20,8 +20,8 @@ module.exports = ({ env }) => ({
       },
       settings: 
       {
-        defaultFrom: 'coder_dev_test@outlook.com',
-        defaultReplyTo: 'coder_dev_test@outlook.com',
+        defaultFrom: env('SMTP_USERNAME'),
+        defaultReplyTo: env('SMTP_USERNAME'),
       },
     },
   },

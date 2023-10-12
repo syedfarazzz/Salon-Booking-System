@@ -7,7 +7,8 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@strapi/plugin-i18n": "4.11.0",
@@ -16,9 +17,7 @@
     "@strapi/strapi": "4.11.0",
     "better-sqlite3": "8.0.1",
     "node-modules": "^1.0.1",
-    "pg": "^8.11.1",
-    "sharp": "^0.32.2",
-    "strapi-stripe": "^3.3.0"
+    "pg": "^8.11.1"
   },
   "author": "A Strapi developer",
   "strapi": {

@@ -91,11 +91,11 @@
     },
     "firstName": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "lastName": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "discounts": {
       "type": "relation",
@@ -106,6 +106,38 @@
     "isReferred": {
       "type": "boolean",
       "default": false
+    },
+    "birthday": {
+      "type": "date",
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "informed_consent_form": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::informed-consent-form.informed-consent-form",
+      "inversedBy": "client"
+    },
+    "client_assessment_form": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::client-assessment-form.client-assessment-form",
+      "inversedBy": "client"
+    },
+    "client_assessment_form_operator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::client-assessment-form-operator.client-assessment-form-operator",
+      "inversedBy": "operator"
+    },
+    "session_info_form": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::session-info-form.session-info-form",
+      "inversedBy": "operator"
     }
   }
 }

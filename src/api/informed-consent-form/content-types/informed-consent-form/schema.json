@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "informed_consent_forms",
+  "info": {
+    "singularName": "informed-consent-form",
+    "pluralName": "informed-consent-forms",
+    "displayName": "Informed_consent_form"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "client": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "informed_consent_form"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "session_info_forms",
+  "info": {
+    "singularName": "session-info-form",
+    "pluralName": "session-info-forms",
+    "displayName": "Session_Info_Form"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "customerName": {
+      "type": "string",
+      "required": true
+    },
+    "operatorName": {
+      "type": "string",
+      "required": true
+    },
+    "checkIn": {
+      "type": "time"
+    },
+    "checkOut": {
+      "type": "time"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "beginningShots": {
+      "type": "string"
+    },
+    "endingShots": {
+      "type": "string"
+    },
+    "sessionManagement": {
+      "type": "text"
+    },
+    "serviceRequestDiff": {
+      "type": "json"
+    },
+    "psychographicInfo": {
+      "type": "text"
+    },
+    "uploadImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "operator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "session_info_form"
+    }
+  }
+}

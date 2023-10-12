@@ -6,11 +6,12 @@ module.exports =
 
         try
         {
+            // For sending to the user who contacted us
             await strapi.plugins['email'].services.email.send
             ({
                 to: result.email,
-                from: 'coder_dev_test@outlook.com',
-                subject: 'Thanks for contacting Everly Beauty',
+                from: process.env.SMTP_USERNAME,
+                subject: 'Thank you for contacting Everly Beauty',
                 // text: `Dear ${result.name},\n\nWe have received your message and will get back to you shortly.`,
                 html: `Dear <strong>${result.name}</strong>,<br><br>
                        We have received your message and will get back to you shortly.<br><br>
@@ -18,10 +19,11 @@ module.exports =
                        EVERLY BEAUTY`
             });
 
+            //For sending to myself / admin
             await strapi.plugins['email'].services.email.send
             ({
-                to: 'coder_dev_test@outlook.com',
-                from: 'coder_dev_test@outlook.com',
+                to: process.env.SMTP_USERNAME,
+                from: process.env.SMTP_USERNAME,
                 subject: `${result.name} has contacted on EverlyBeauty`,
                 // text: `${result.name} has the following query\n\n${result.message}`,
                 html:  ` You have a new contact us inquiry from your website. Here are the details:<br><br>

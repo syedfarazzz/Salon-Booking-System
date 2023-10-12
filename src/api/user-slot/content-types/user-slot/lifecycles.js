@@ -88,7 +88,7 @@ module.exports =
                     await strapi.plugins['email'].services.email.send
                     ({
                         to: email,
-                        from: 'coder_dev_test@outlook.com',
+                        from: process.env.SMTP_USERNAME,
                         subject: 'Promo Code',
                         text: `Your Promo Code is: ${promoCode}`
                     });    
@@ -115,6 +115,45 @@ module.exports =
         catch(errr)
         {
             console.log(errr);
+        }
+    },
+
+    async afterCreate(event) 
+    {
+        const { result, params } = event;
+
+        console.log(result);
+        try
+        {
+            const entity = await strapi.db.query('api::user-slot.user-slot').findOne(
+                {
+                    where: { id: result.id }, populate: true
+                }
+            );
+    
+            const email = entity.user.email;
+            try
+            {
+                await strapi.plugins['email'].services.email.send
+                ({
+                    to: email,
+                    from: process.env.SMTP_USERNAME,
+                    subject: 'Consent Form Email',
+                    text: `Kindly open these links to fill the forms`
+                });    
+
+            }
+
+            catch(err)
+            {
+                console.log(err);
+            }
+
+
+        }
+        catch(err)
+        {
+            console.log(err);
         }
     }
 }

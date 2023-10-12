@@ -15,14 +15,15 @@
     "name": {
       "type": "string"
     },
-    "email": {
-      "type": "string"
-    },
     "phoneNumber": {
       "type": "biginteger"
     },
     "message": {
       "type": "text"
+    },
+    "email": {
+      "type": "email",
+      "required": true
     }
   }
 }
