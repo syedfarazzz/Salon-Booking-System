@@ -8,7 +8,7 @@ module.exports = ({ env }) => ({
     tasks: cronTasks,
   },
   
-  url: "https://api.everlybeauty.ca",
+  url: env("BACKEND_URL", "https://api.everlybeauty.ca"),
 
   app: {
     keys: env.array("APP_KEYS"),
