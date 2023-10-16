@@ -7,7 +7,7 @@ module.exports = ({ env }) => ({
     enabled: true,
     tasks: cronTasks,
   },
-  // url: " https://0fa0-113-203-241-37.ngrok-free.app",
+  
   url: "https://api.everlybeauty.ca",
 
   app: {

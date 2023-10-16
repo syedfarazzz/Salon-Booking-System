@@ -58,13 +58,7 @@
     "immuneSystemDisorders": {
       "type": "json"
     },
-    "furtherDetails": {
-      "type": "json"
-    },
     "medicationHistory": {
-      "type": "json"
-    },
-    "skinHistory": {
       "type": "json"
     },
     "name": {
@@ -78,6 +72,129 @@
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user",
       "mappedBy": "client_assessment_form"
+    },
+    "furtherDetails": {
+      "type": "text"
+    },
+    "medicalConditions": {
+      "type": "text"
+    },
+    "doctorContact": {
+      "type": "text"
+    },
+    "surgery": {
+      "type": "text"
+    },
+    "pregnancyStatus": {
+      "type": "text"
+    },
+    "contactLenses": {
+      "type": "text"
+    },
+    "menstrualCycle": {
+      "type": "text"
+    },
+    "medicalSuppliments": {
+      "type": "text"
+    },
+    "listMedications": {
+      "type": "text"
+    },
+    "tattoos": {
+      "type": "text"
+    },
+    "q1": {
+      "type": "boolean"
+    },
+    "q2": {
+      "type": "boolean"
+    },
+    "q3": {
+      "type": "boolean"
+    },
+    "q4": {
+      "type": "boolean"
+    },
+    "q5": {
+      "type": "boolean"
+    },
+    "q6": {
+      "type": "boolean"
+    },
+    "q7": {
+      "type": "boolean"
+    },
+    "q8": {
+      "type": "boolean"
+    },
+    "q9": {
+      "type": "boolean"
+    },
+    "q10": {
+      "type": "boolean"
+    },
+    "q11": {
+      "type": "boolean"
+    },
+    "q12": {
+      "type": "boolean"
+    },
+    "q13": {
+      "type": "boolean"
+    },
+    "q14": {
+      "type": "boolean"
+    },
+    "hairRemovedBefore": {
+      "type": "text"
+    },
+    "eyeMakup": {
+      "type": "text"
+    },
+    "cleansing": {
+      "type": "text"
+    },
+    "facialSoap": {
+      "type": "text"
+    },
+    "cleansingBrush": {
+      "type": "string"
+    },
+    "toner": {
+      "type": "text"
+    },
+    "eyeCream": {
+      "type": "text"
+    },
+    "facialSerums": {
+      "type": "string"
+    },
+    "dayCream": {
+      "type": "text"
+    },
+    "sunscreen": {
+      "type": "text"
+    },
+    "facialMasks": {
+      "type": "text"
+    },
+    "retinol": {
+      "type": "text"
+    },
+    "aha": {
+      "type": "text"
+    },
+    "bodyScrub": {
+      "type": "text"
+    },
+    "bodyLotion": {
+      "type": "text"
+    },
+    "makeup": {
+      "type": "text"
+    },
+    "otherMedication": {
+      "type": "text"
     }
   }
 }

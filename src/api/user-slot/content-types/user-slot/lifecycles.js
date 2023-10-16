@@ -93,7 +93,6 @@ module.exports =
                         text: `Your Promo Code is: ${promoCode}`
                     });    
     
-    
                     const createdPromo = await strapi.db.query('api::discount.discount').create({
                         data: 
                         {
@@ -102,14 +101,12 @@ module.exports =
                             discountUser: entity.user.id
                         } // Data to be Created
                     });
-    
                 }
     
                 catch(err)
                 {
                     console.log(err);
                 }
-    
             }
         }
         catch(errr)
@@ -122,34 +119,76 @@ module.exports =
     {
         const { result, params } = event;
 
-        console.log(result);
+        // console.log("result" , result);
         try
         {
-            const entity = await strapi.db.query('api::user-slot.user-slot').findOne(
+            const entity =  await strapi.entityService.findOne('api::user-slot.user-slot', result.id , 
                 {
-                    where: { id: result.id }, populate: true
+                    populate: 
+                    {
+                        user: 
+                        {
+                            fields: ['id', 'username', 'email', 'firstName', 'lastName'],
+                            populate:
+                            {
+                                informed_consent_form:
+                                {
+                                    fields: ['*']
+                                }
+                            }
+                        },
+                    }
+                    // where: { id: result.id }, populate: true
                 }
             );
+
+            // Informed Consent Form
+            const createdForm1 = await strapi.entityService.create("api::informed-consent-form.informed-consent-form", 
+                {
+                    data: 
+                    {
+                        // pass in the owner id to define the owner
+                        client: entity.user.id,
+                        publishedAt: new Date()
+                    }
+                })
+
+            // CLient Assessment Form
+            const createdForm2 = await strapi.entityService.create("api::client-assessment-form.client-assessment-form", 
+            {
+                data: 
+                {
+                    // pass in the owner id to define the owner
+                    client: entity.user.id,
+                    publishedAt: new Date()
+                }
+            })
     
             const email = entity.user.email;
-            try
+            if (entity.user.informed_consent_form === null) 
             {
-                await strapi.plugins['email'].services.email.send
-                ({
-                    to: email,
-                    from: process.env.SMTP_USERNAME,
-                    subject: 'Consent Form Email',
-                    text: `Kindly open these links to fill the forms`
-                });    
+                //if NULL
+                try
+                {
+                    await strapi.plugins['email'].services.email.send
+                    ({
+                        to: email,
+                        from: process.env.SMTP_USERNAME,
+                        subject: 'Consent Form Email',
+                        // text: `Kindly open these links to fill the forms`,
+                        html: `Kindly open these links to fill the forms,<br><br>
+                               <a href="${process.env.FRONTEND_URL}/consent?${createdForm1.id}">Click here to open the Consent Form</a><br><br>
+                               <a href="${process.env.FRONTEND_URL}/assessment?${createdForm2.id}">Click here to open Client Assessment Form</a><br><br>
+                               Best regards,<br>
+                               EVERLY BEAUTY`
+                    });    
+                }
 
+                catch(err)
+                {
+                    console.log(err);
+                }
             }
-
-            catch(err)
-            {
-                console.log(err);
-            }
-
-
         }
         catch(err)
         {

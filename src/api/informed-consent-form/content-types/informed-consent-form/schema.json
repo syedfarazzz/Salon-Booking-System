@@ -4,7 +4,8 @@
   "info": {
     "singularName": "informed-consent-form",
     "pluralName": "informed-consent-forms",
-    "displayName": "Informed_consent_form"
+    "displayName": "Informed_consent_form",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,11 +14,11 @@
   "attributes": {
     "name": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "date": {
       "type": "date",
-      "required": true
+      "required": false
     },
     "client": {
       "type": "relation",
