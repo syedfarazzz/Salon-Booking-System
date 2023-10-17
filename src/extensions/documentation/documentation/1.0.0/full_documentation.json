@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-10-16T19:09:44.818Z"
+    "x-generation-date": "2023-10-17T15:00:45.540Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -25,7 +25,7 @@
   },
   "servers": [
     {
-      "url": "https://api.everlybeauty.ca/api",
+      "url": "http://localhost:80/api",
       "description": "Development server"
     }
   ],
@@ -3074,10 +3074,6 @@
         ],
         "properties": {
           "data": {
-            "required": [
-              "operatorsName",
-              "date"
-            ],
             "type": "object",
             "properties": {
               "contraIndications": {
@@ -3160,10 +3156,6 @@
       },
       "ClientAssessmentFormOperator": {
         "type": "object",
-        "required": [
-          "operatorsName",
-          "date"
-        ],
         "properties": {
           "contraIndications": {
             "type": "string"
@@ -11630,10 +11622,6 @@
         ],
         "properties": {
           "data": {
-            "required": [
-              "customerName",
-              "operatorName"
-            ],
             "type": "object",
             "properties": {
               "customerName": {
@@ -11742,10 +11730,6 @@
       },
       "SessionInfoForm": {
         "type": "object",
-        "required": [
-          "customerName",
-          "operatorName"
-        ],
         "properties": {
           "customerName": {
             "type": "string"

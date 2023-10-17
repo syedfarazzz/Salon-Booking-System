@@ -4,7 +4,8 @@
   "info": {
     "singularName": "session-info-form",
     "pluralName": "session-info-forms",
-    "displayName": "Session_Info_Form"
+    "displayName": "Session_Info_Form",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,11 +14,11 @@
   "attributes": {
     "customerName": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "operatorName": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "checkIn": {
       "type": "time"
@@ -44,11 +45,12 @@
       "type": "text"
     },
     "uploadImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "operator": {
       "type": "relation",

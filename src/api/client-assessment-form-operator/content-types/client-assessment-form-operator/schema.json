@@ -4,7 +4,8 @@
   "info": {
     "singularName": "client-assessment-form-operator",
     "pluralName": "client-assessment-form-operators",
-    "displayName": "Client_assessment_form_operator"
+    "displayName": "Client_assessment_form_operator",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -22,11 +23,11 @@
     },
     "operatorsName": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "date": {
       "type": "date",
-      "required": true
+      "required": false
     },
     "serviceRequest": {
       "type": "json"
