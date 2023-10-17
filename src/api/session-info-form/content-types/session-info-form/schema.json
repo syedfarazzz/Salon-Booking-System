@@ -57,6 +57,9 @@
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user",
       "mappedBy": "session_info_form"
+    },
+    "date": {
+      "type": "date"
     }
   }
 }
