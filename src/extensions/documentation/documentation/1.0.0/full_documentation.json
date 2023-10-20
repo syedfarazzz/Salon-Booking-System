@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-10-17T18:43:52.113Z"
+    "x-generation-date": "2023-10-20T19:07:49.791Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2830,6 +2830,58 @@
                           }
                         }
                       },
+                      "studentCredit": {
+                        "type": "string",
+                        "pattern": "^\\d*$",
+                        "example": "123456789"
+                      },
+                      "phone": {
+                        "type": "string",
+                        "pattern": "^\\d*$",
+                        "example": "123456789"
+                      },
+                      "referredBy": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "attributes": {
+                                "type": "object",
+                                "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "referrals": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "number"
+                                },
+                                "attributes": {
+                                  "type": "object",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "referralCredit": {
+                        "type": "string",
+                        "pattern": "^\\d*$",
+                        "example": "123456789"
+                      },
                       "createdAt": {
                         "type": "string",
                         "format": "date-time"
@@ -4895,6 +4947,58 @@
                             }
                           }
                         }
+                      },
+                      "studentCredit": {
+                        "type": "string",
+                        "pattern": "^\\d*$",
+                        "example": "123456789"
+                      },
+                      "phone": {
+                        "type": "string",
+                        "pattern": "^\\d*$",
+                        "example": "123456789"
+                      },
+                      "referredBy": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "attributes": {
+                                "type": "object",
+                                "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "referrals": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "number"
+                                },
+                                "attributes": {
+                                  "type": "object",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "referralCredit": {
+                        "type": "string",
+                        "pattern": "^\\d*$",
+                        "example": "123456789"
                       },
                       "createdAt": {
                         "type": "string",
@@ -7229,6 +7333,58 @@
                             }
                           }
                         }
+                      },
+                      "studentCredit": {
+                        "type": "string",
+                        "pattern": "^\\d*$",
+                        "example": "123456789"
+                      },
+                      "phone": {
+                        "type": "string",
+                        "pattern": "^\\d*$",
+                        "example": "123456789"
+                      },
+                      "referredBy": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "attributes": {
+                                "type": "object",
+                                "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "referrals": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "number"
+                                },
+                                "attributes": {
+                                  "type": "object",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "referralCredit": {
+                        "type": "string",
+                        "pattern": "^\\d*$",
+                        "example": "123456789"
                       },
                       "createdAt": {
                         "type": "string",
@@ -10313,6 +10469,58 @@
                             }
                           }
                         }
+                      },
+                      "studentCredit": {
+                        "type": "string",
+                        "pattern": "^\\d*$",
+                        "example": "123456789"
+                      },
+                      "phone": {
+                        "type": "string",
+                        "pattern": "^\\d*$",
+                        "example": "123456789"
+                      },
+                      "referredBy": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "attributes": {
+                                "type": "object",
+                                "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "referrals": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "number"
+                                },
+                                "attributes": {
+                                  "type": "object",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "referralCredit": {
+                        "type": "string",
+                        "pattern": "^\\d*$",
+                        "example": "123456789"
                       },
                       "createdAt": {
                         "type": "string",
@@ -13640,6 +13848,58 @@
                           }
                         }
                       },
+                      "studentCredit": {
+                        "type": "string",
+                        "pattern": "^\\d*$",
+                        "example": "123456789"
+                      },
+                      "phone": {
+                        "type": "string",
+                        "pattern": "^\\d*$",
+                        "example": "123456789"
+                      },
+                      "referredBy": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "attributes": {
+                                "type": "object",
+                                "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "referrals": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "number"
+                                },
+                                "attributes": {
+                                  "type": "object",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "referralCredit": {
+                        "type": "string",
+                        "pattern": "^\\d*$",
+                        "example": "123456789"
+                      },
                       "createdAt": {
                         "type": "string",
                         "format": "date-time"
@@ -15590,6 +15850,58 @@
                             }
                           }
                         }
+                      },
+                      "studentCredit": {
+                        "type": "string",
+                        "pattern": "^\\d*$",
+                        "example": "123456789"
+                      },
+                      "phone": {
+                        "type": "string",
+                        "pattern": "^\\d*$",
+                        "example": "123456789"
+                      },
+                      "referredBy": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "attributes": {
+                                "type": "object",
+                                "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "referrals": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "number"
+                                },
+                                "attributes": {
+                                  "type": "object",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "referralCredit": {
+                        "type": "string",
+                        "pattern": "^\\d*$",
+                        "example": "123456789"
                       },
                       "createdAt": {
                         "type": "string",

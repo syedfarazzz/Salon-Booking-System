@@ -138,6 +138,29 @@
       "relation": "oneToOne",
       "target": "api::session-info-form.session-info-form",
       "inversedBy": "operator"
+    },
+    "studentCredit": {
+      "type": "biginteger",
+      "default": "0"
+    },
+    "phone": {
+      "type": "biginteger"
+    },
+    "referredBy": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "referrals"
+    },
+    "referrals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "referredBy"
+    },
+    "referralCredit": {
+      "type": "biginteger",
+      "default": "0"
     }
   }
 }
