@@ -10,23 +10,17 @@ module.exports = {
             if (referredBy) {
                 try {
                     const user = await strapi.entityService.findOne('plugin::users-permissions.user', referredBy);
-                    console.log(user);
-                    console.log("a");
 
                     if (user.isReferred === false) {
-                        console.log("b");
                         const updatedCredits = +user.referralCredit + 50;
-                        console.log(updatedCredits);
 
                         var res = await strapi.entityService.update('plugin::users-permissions.user', referredBy, {
                             data: {
                                 referralCredit: updatedCredits
                             }
                         });
-
-                        console.log("c");
                     }
-                    console.log("d");
+
                 } catch (error) {
                     console.error("Error:", error);
                 }
