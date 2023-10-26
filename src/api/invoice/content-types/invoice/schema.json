@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invoices",
+  "info": {
+    "singularName": "invoice",
+    "pluralName": "invoices",
+    "displayName": "Invoice"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "total": {
+      "type": "json"
+    },
+    "userSlot": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::user-slot.user-slot",
+      "inversedBy": "invoice"
+    }
+  }
+}

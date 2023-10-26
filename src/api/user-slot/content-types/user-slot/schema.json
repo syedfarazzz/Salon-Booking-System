@@ -28,7 +28,7 @@
       "inversedBy": "user_slots"
     },
     "payableAmount": {
-      "type": "integer"
+      "type": "biginteger"
     },
     "services": {
       "type": "json"
@@ -48,6 +48,12 @@
     },
     "details": {
       "type": "json"
+    },
+    "invoice": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::invoice.invoice",
+      "mappedBy": "userSlot"
     }
   }
 }
