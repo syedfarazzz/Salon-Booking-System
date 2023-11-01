@@ -195,6 +195,9 @@
     },
     "otherMedication": {
       "type": "text"
+    },
+    "questions": {
+      "type": "json"
     }
   }
 }

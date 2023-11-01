@@ -19,7 +19,7 @@ module.exports = createCoreController('api::user-slot.user-slot',  ({strapi}) =>
         const currentUser = ctx.state.user
 
         // get request body data from context
-        const  {date, end, payableAmount, services, start, details}  = ctx.request.body.data
+        const  {date, end, payableAmount, services, start, details, userId}  = ctx.request.body.data
 
         const newEntryDate = ctx.request.body.data.date;
         const newEntryStartTime = ctx.request.body.data.start;
@@ -85,13 +85,12 @@ module.exports = createCoreController('api::user-slot.user-slot',  ({strapi}) =>
                                 date: newEntryDate,
                             }, 
                             {
-                                user: currentUser 
+                                user: userId==null? currentUser.id:userId 
                             },
                         ],
                     }
                 }
             );
-
             
             
             if (sameTimeSlot.length > 0 )
@@ -128,7 +127,7 @@ module.exports = createCoreController('api::user-slot.user-slot',  ({strapi}) =>
                         start,
                         details,
                         // pass in the owner id to define the owner
-                        user: currentUser.id,
+                        user: userId==null? currentUser.id:userId,
                     }
                 })
 

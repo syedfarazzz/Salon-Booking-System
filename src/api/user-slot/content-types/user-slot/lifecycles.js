@@ -54,6 +54,7 @@ module.exports =
     },
     */
     
+    /*  promo-code is commented bcz it is just for marketing purpose now and not being used at the moment
     async afterUpdate(event) 
     {
         const { result, params } = event;
@@ -114,6 +115,7 @@ module.exports =
             console.log(errr);
         }
     },
+    */
 
     async afterCreate(event) 
     {
@@ -141,7 +143,9 @@ module.exports =
                     // where: { id: result.id }, populate: true
                 }
             );
-
+            
+            if (entity.user.informed_consent_form === null) 
+            {
             // Informed Consent Form
             const createdForm1 = await strapi.entityService.create("api::informed-consent-form.informed-consent-form", 
                 {
@@ -165,8 +169,6 @@ module.exports =
             })
     
             const email = entity.user.email;
-            if (entity.user.informed_consent_form === null) 
-            {
                 //if NULL
                 try
                 {

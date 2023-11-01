@@ -34,9 +34,15 @@
     },
     "operator": {
       "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "client_assessment_form_operators"
+    },
+    "client": {
+      "type": "relation",
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user",
-      "mappedBy": "client_assessment_form_operator"
+      "inversedBy": "client_assessment_form_operator"
     }
   }
 }

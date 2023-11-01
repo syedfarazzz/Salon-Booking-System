@@ -60,6 +60,12 @@
     },
     "date": {
       "type": "date"
+    },
+    "user_slot": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::user-slot.user-slot",
+      "inversedBy": "session_info_form"
     }
   }
 }

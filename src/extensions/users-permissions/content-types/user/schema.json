@@ -127,12 +127,6 @@
       "target": "api::client-assessment-form.client-assessment-form",
       "inversedBy": "client"
     },
-    "client_assessment_form_operator": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::client-assessment-form-operator.client-assessment-form-operator",
-      "inversedBy": "operator"
-    },
     "session_info_form": {
       "type": "relation",
       "relation": "oneToOne",
@@ -161,6 +155,34 @@
     "referralCredit": {
       "type": "biginteger",
       "default": "0"
+    },
+    "isVerified": {
+      "type": "boolean",
+      "default": false
+    },
+    "operator_slots": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::user-slot.user-slot",
+      "mappedBy": "operator"
+    },
+    "shifts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::shift.shift",
+      "mappedBy": "operator"
+    },
+    "client_assessment_form_operators": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::client-assessment-form-operator.client-assessment-form-operator",
+      "mappedBy": "operator"
+    },
+    "client_assessment_form_operator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::client-assessment-form-operator.client-assessment-form-operator",
+      "mappedBy": "client"
     }
   }
 }

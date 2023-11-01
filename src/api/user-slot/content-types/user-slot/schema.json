@@ -54,6 +54,18 @@
       "relation": "oneToOne",
       "target": "api::invoice.invoice",
       "mappedBy": "userSlot"
+    },
+    "operator": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "operator_slots"
+    },
+    "session_info_form": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::session-info-form.session-info-form",
+      "mappedBy": "user_slot"
     }
   }
 }
