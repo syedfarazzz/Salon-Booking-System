@@ -4,21 +4,46 @@
   "info": {
     "singularName": "invoice",
     "pluralName": "invoices",
-    "displayName": "Invoice"
+    "displayName": "Invoice",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "total": {
-      "type": "json"
-    },
     "userSlot": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::user-slot.user-slot",
       "inversedBy": "invoice"
+    },
+    "service": {
+      "type": "json"
+    },
+    "subTotal": {
+      "type": "biginteger"
+    },
+    "tax": {
+      "type": "float"
+    },
+    "total": {
+      "type": "float"
+    },
+    "date": {
+      "type": "date"
+    },
+    "invoice": {
+      "type": "biginteger"
+    },
+    "invoiceTo": {
+      "type": "string"
+    },
+    "products": {
+      "type": "json"
+    },
+    "serviceDiscount": {
+      "type": "string"
     }
   }
 }
